@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fork&Knife</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet"/>
+    </head>
+    
+    <body>
+        <script src='hw2.js' ></script>
+
+        <main>
+            <img src="kf-logo.png" alt="logo" width="180" height="60">
+            <h1 style="display:inline;"> Global Dashboard </h1>
+        
+            <div class="grid-container">
+                <div class="item1">
+                    <h3 style="font-size:18px">Sales</h3>
+                    <p class="green">$</p>
+                    <p class="blue"> 0 </p>
+                </div>
+
+
+
+                <div class = "item2">
+                    <h3 style="font-size:18px">Knife</h3>
+                    <p class="blue"> 0 </p>
+                </div>
+
+                <div class = "item3">
+                    <h3 style="font-size:18px">Fork</h3>
+                    <p class="blue"> 0 </p>
+                </div>
+            
+            </div>
+            <hr />            
+        
+            <div class="grid-container">
+                <div class="item1">
+                    <figure>
+                        <figcaption><b>Total Sales Breakdown </b></figcaption>
+                        <img class="chart" src="pie.png">
+                    </figure>
+                </div>
+                    
+                <div class="item2">
+                    <figure>
+                        <figcaption><b>Sales Per Month</b></figcaption>
+                        <img class="chart" src="bar.png">
+                    </figure>
+                </div>
+                
+                <div class="item3">
+                    <iframe src="https://app.zingsoft.com/demos/view/K2LKS4Q0"></iframe>
+                    <a href="https://app.zingsoft.com/demos/view/K2LKS4Q0">Source</a>
+                </div>
+            </div>
+        <br>
+        <hr>
+
+        <section>
+            <table>
+                <caption>Order History</caption>
+                <colgroup>
+                    <col class="id">
+                    <col span="5">
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th rowspan="2">ID#</th>
+                        <th rowspan="2">Date</th>
+                        <th colspan="2" scope="colgroup">Quantity</th>
+                        <th rowspan="2">Total</th>
+                        <th rowspan="2">Payment</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="colgroup">Knife</th> 
+                        <th scope="colgroup">Fork</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>9/12/20</td>
+                        <td>6</td>
+                        <td>9</td>
+                        <td>$82.41</td>
+                        <td>Paypal</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>9/21/20</td>
+                        <td>12</td>
+                        <td>12</td>
+                        <td>$134.88</td>
+                        <td>Visa</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>10/2/20</td>
+                        <td>19</td>
+                        <td>16</td>
+                        <td>$198.59</td>
+                        <td>Visa</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">&copy; 2020 K&F Worldwide</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section>
+            <br>
+            <details>
+                <summary onclick="showDialog()">Order Form</summary>
+
+                <dialog id="dialog" open>
+                    <p>This section will work only after HW2!</p>
+                </dialog>
+                
+
+                <form>
+                    <fieldset>
+                        <label>Knife</label> 
+                        <input type="text" size=2>
+                        @<input type="text" size=10>
+                        =$<input type="text" size=10>
+
+                        <br>
+
+                        <label>Fork</label> 
+                        <input type="text" size=2 >
+                        @<input type="text" size=10>
+                        =$<input type="text" size=10>
+
+                        <br>
+
+                        <label>Total $</label>
+                        <input type="text" size=10>
+
+                        <br>
+
+                        <label for="Payment">Payment</label>
+
+                        <br>
+
+                        <select multiple id="Payment">
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                            <option value="Paypal">Paypal</option>
+                        </select>
+
+                        <br>
+
+                        <label>Shipping</label>
+                        <input type="text" list="shipping">
+                            <datalist id="shipping">
+                                <option value="Standard FREE"></option>
+                                <option value="2 Business Day: $10"></option>
+                                <option value="USPS Priority: $5"></option>
+                            </datalist>
+
+                        <br>
+
+                        <label for="Comment">Comment</label>
+                        <textarea id="Comment"></textarea>
+
+                        <br>
+
+                        <button type="reset">Cancel</button>
+                        <button type="submit">Order</button>
+
+                    </fieldset>
+                </form>
+                
+
+                
+            </details>
+        </section>
+
+        <section>
+            <p>Disclaimer: This page is provdied <i>as is</i></p>
+            <p>Notes</p>
+            <ul>
+                <li>Your order will leave warehouse in 3-5 days</li>
+                <li>If you have any question please contact us at 123456789</li>
+                <li>K&F is a proud supporter of the <em>Stuart Collection</em></li>
+            </ul>
+        </section>
+
+        </main>
+
+        <footer>
+            <address>9500 Gilman Dr, La Jolla, CA 92093</address> 
+        </footer>
+    </body>
+
+    
+    
+</html>
