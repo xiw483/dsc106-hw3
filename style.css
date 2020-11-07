@@ -68,3 +68,8 @@ h1, h3 {
 a, figcaption, label, p, li, footer {
     font-family: 'Montserrat', sans-serif;
 }
+
+main {
+    margin-left: 10px;
+    margin-top: 10px;
+}
