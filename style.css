@@ -57,7 +57,7 @@ td {
     text-align: center;
 }
 
-col.id {
+.id, tfoot, td:nth-child(1) {
     background-color: lightgray;
 }
 

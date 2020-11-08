@@ -1,7 +1,7 @@
 const KNIFE_PRICE = 6.25;
 const FORK_PRICE = 4.99;
 const ZERO_FORMAT = '0.00';
-var id = 3;
+var id = 1;
 
 document.getElementById("knife_price").value = KNIFE_PRICE;
 document.getElementById("fork_price").value = FORK_PRICE;
@@ -31,8 +31,6 @@ function tot_price(arr) {
 }
 
 function insert_data(arr) {
-
-
     var sales = tot_price(arr);
     var data = Array.from(arr);
     data.splice(4, 0, "$"+sales)
@@ -53,6 +51,8 @@ function insert_data(arr) {
 
     store.orderHistory.push(arr)
     localStorage.setItem('order_history', store.orderHistory)
+    id++;
+    localStorage.setItem('order_id', id);
     
 }
 
@@ -74,6 +74,8 @@ function update_form() {
 function order() {
     var arr = new Array(4);
 
+    var order_id = localStorage.getItem("order_id");
+
     var today = new Date();
     var dd = String(today.getDate()).padStart(2,'0');
     var mm = String(today.getMonth()+1).padStart(2,'0');
@@ -85,7 +87,7 @@ function order() {
 
     var payment_method = document.getElementById("payment").value;
 
-    arr[0] = id;
+    arr[0] = order_id;
     arr[1] = date;
     arr[2] = knife_input;
     arr[3] = fork_input;
@@ -93,15 +95,14 @@ function order() {
 
     insert_data(arr);
     clear_field();
-    id++;
 }
 
 function clear_field() {
     document.getElementById("knife_input").value = 0;
     document.getElementById("fork_input").value = 0;
-    document.getElementById("knife_total_price").value = 0;
-    document.getElementById("fork_total_price").value = 0;
-    document.getElementById("total_price").value = 0;
+    document.getElementById("knife_total_price").value = 0.00;
+    document.getElementById("fork_total_price").value = 0.00;
+    document.getElementById("total_price").value = 0.00;
     document.getElementById("payment").value = null;
     document.getElementById("order_btn").disabled = "disabled";
 }
